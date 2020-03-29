@@ -9,6 +9,8 @@ class CoronaChat < Sinatra::Base
 
     response.message do |message|
       case body
+      when 'hey'
+        message.body("Hello, Welcome to the Official Chatbot of the Kerala Goverment.\n\nEnter one of the options given below,\n1. Information about COVID 19 in Kerala")
       when 'info'
         message.body("Hey you entered info")
       else
