@@ -11,12 +11,10 @@ class CoronaChat < Sinatra::Base
 
     response.message do |message|
       case body
-      when 'hey', 'hi', 'hello'
+      when 'hey', 'hi', 'hello', 'menu', 'info'
         message.body(generate_hey_response)
-      when '1'
+      when '1', 'status'
         message.body(kerala_status_response)
-      when 'status'
-        message.body("Hey you entered info")
       else
         message.body("Sorry! The command you entered is not recognized, please try entering **menu** or **info**")
       end
